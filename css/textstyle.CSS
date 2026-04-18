@@ -8,7 +8,6 @@
       --gold-dim:  #b89030;
       --text:      #dff0ff;
       --text-dim:  #a0b8d4;
-      --navy:      #03081a;
       --muted:     #7a9dbe;
       --card:      rgba(6,24,60,0.75);
       --border:    rgba(0,212,216,0.2);
@@ -41,7 +40,6 @@
       border-bottom: 1px solid rgba(0,212,216,0.1);
     }
     .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
-    .nav-logo svg { width:36px; height:36px; }
     .nav-logo-text {
       font-family:'Orbitron',monospace; font-size:12px; font-weight:700;
       color:var(--text); letter-spacing:1.5px;
@@ -81,7 +79,7 @@
     .hero-left { flex:1; max-width:800px; z-index:2; }
 
     .hero-right {
-      margin-left: 0px; flex:1; display:flex; align-items:center; justify-content:center;
+      flex:1; display:flex; align-items:center; justify-content:center;
       margin-top: -50px;
     }
 
@@ -122,7 +120,6 @@
       font-weight:800; font-size:13px; letter-spacing:1.5px; text-transform:uppercase;
       border:none; border-radius:6px; cursor:pointer; text-decoration:none;
       transition: background .2s, transform .2s, box-shadow .2s;
-      box-shadow: 0 0 0 rgba(0,212,216,0);
     }
     .btn-primary:hover {
       background:#00eeff; transform:translateY(-3px);
@@ -163,7 +160,7 @@
       aspect-ratio: 1/ 1;
       border-radius:16px 16px 0 0 ; /* changes needed*/
       overflow:hidden;
-      margin-bottom:0; /* changes needed*/
+ 
     }
 
     .about-image img {
@@ -199,6 +196,7 @@
     .section-label {
       font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
       color:var(--teal); margin-bottom:12px;
+      border-left:3px solid var(--teal); padding-left:0.8rem;
     }
     .section-title {
       font-family:'Orbitron',monospace; font-size:clamp(22px,3vw,34px); font-weight:700;
@@ -231,7 +229,6 @@
       display:flex; 
       align-items:center; 
       justify-content:center;
-      font-size:64px;
       position:relative; 
       overflow:hidden;
     }
@@ -310,8 +307,6 @@
       padding:80px 56px;
       max-width:1300px; margin:0 auto; text-align:center;
     }
-    .why-section .section-title { margin:0 auto 12px; }
-
     .why-section .section-sub { margin:0 auto 56px; text-align:center; }
 
     .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
@@ -336,7 +331,6 @@
       display:flex; 
       align-items:center; 
       justify-content:center;
-      background:rgba(0,212,216,.05);
     }
 
     .why-thumb img{
@@ -381,7 +375,7 @@
       min-width: 36px; height: 36px; border-radius: 50%;
       background: linear-gradient(135deg, var(--teal), rgba(0,201,200,0.3));
       display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 0.85rem; color: var(--navy);
+      font-weight: 800; font-size: 0.85rem; color: var(--bg);
     }
     .learn-item h4 { font-size: 0.95rem; font-weight: 700; color: white; margin-bottom: 0.3rem; }
     .learn-item p { font-size: 0.83rem; color: var(--text-dim); line-height: 1.55; }

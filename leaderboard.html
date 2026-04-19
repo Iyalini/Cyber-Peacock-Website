@@ -5,6 +5,13 @@
   <title>Cyber Peacock Academy</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"> <!--fonts-->
   <link rel="stylesheet" href="css/textstyle.css">
+  <style>
+    .lb-title {
+      font-family:'Orbitron',monospace; font-size:14px; font-weight:700;
+      color:var(--gold); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -30,46 +37,123 @@
       <p class="section-label">Stay Motivated</p>
       <h2 class="section-title">Level Up as You Learn</h2>
       <p class="section-sub">We've built a full rewards system to keep you coming back every day. Because consistency is the #1 skill in cybersecurity.</p>
-      <div class="xp-items">
-        <div class="xp-item"><span class="xp-icon">⚡</span><div><div class="xp-name">XP Points</div><div class="xp-desc">Earn XP for every lesson completed, quiz passed, and challenge solved.</div></div></div>
-        <div class="xp-item"><span class="xp-icon">🔥</span><div><div class="xp-name">Daily Streaks</div><div class="xp-desc">Log in and learn every day to build your streak. Longer streaks = bonus rewards.</div></div></div>
-        <div class="xp-item"><span class="xp-icon">💎</span><div><div class="xp-name">Gems</div><div class="xp-desc">Collect Gems to unlock premium modules and bonus challenges for free.</div></div></div>
-        <div class="xp-item"><span class="xp-icon">🏆</span><div><div class="xp-name">Leaderboard</div><div class="xp-desc">Compete with learners globally and rise through the ranks each week.</div></div></div>
+          <!-- ── USERNAME SEARCH FORM ── -->
+    <!-- JavaScript validates the input is not empty before searching -->
+    <div class="lb-search">
+      <h3 class="lb-search-title">🔍 Find a Learner</h3>
+      <div class="lb-form-group">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Enter username..." 
+          aria-label="Search for a learner by username"
+        >
+        <button onclick="searchLearner()">Search</button>
       </div>
+      <p id="searchResult" class="lb-search-result"></p>
+    </div>  
+      <div class="xp-items">
+        <li class="xp-item">
+            <span class="xp-icon">⚡</span>
+            <div>
+              <div class="xp-name">XP Points</div>
+              <ul class="xp-sub">
+                <li>Earn XP for every lesson completed</li>
+                <li>Gain XP from quizzes and challenges</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="xp-item">
+            <span class="xp-icon">🔥</span>
+            <div>
+              <div class="xp-name">Daily Streaks</div>
+              <ul class="xp-sub">
+                <li>Log in daily to maintain your streak</li>
+                <li>Longer streaks unlock bonus rewards</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="xp-item">
+            <span class="xp-icon">💎</span>
+            <div>
+              <div class="xp-name">Gems</div>
+              <ul class="xp-sub">
+                <li>Collect gems while learning</li>
+                <li>Unlock premium modules for free</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="xp-item">
+            <span class="xp-icon">🏆</span>
+            <div>
+              <div class="xp-name">Leaderboard</div>
+              <ul class="xp-sub">
+                <li>Compete with global learners</li>
+                <li>Climb rankings weekly</li>
+              </ul>
+            </div>
+          </li>   
+       </div>
     </div>
+
+
+
     <div class="gamify-visual">
       <div class="lb-title">🏆 Top Learners This Week</div>
-      <div class="lb-row">
-        <div class="lb-rank gold">1</div>
-        <div class="lb-avatar">😎</div>
-        <div class="lb-name">Alex Smith</div>
-        <div class="lb-xp">16,800 XP</div>
-      </div>
-      <div class="lb-row">
-        <div class="lb-rank">2</div>
-        <div class="lb-avatar">🧑‍💻</div>
-        <div class="lb-name">Jessica Lee</div>
-        <div class="lb-xp">15,700 XP</div>
-      </div>
-      <div class="lb-row">
-        <div class="lb-rank">3</div>
-        <div class="lb-avatar">🎮</div>
-        <div class="lb-name">Mia Chen</div>
-        <div class="lb-xp">14,300 XP</div>
-      </div>
-      <div class="lb-row">
-        <div class="lb-rank">4</div>
-        <div class="lb-avatar">🦾</div>
-        <div class="lb-name">Daniel Johnson</div>
-        <div class="lb-xp">14,000 XP</div>
-      </div>
-      <div class="lb-row">
-        <div class="lb-rank">5</div>
-        <div class="lb-avatar">⚡</div>
-        <div class="lb-name">Emma Davis</div>
-        <div class="lb-xp">12,500 XP</div>
-      </div>
+      <table class="leaderboard-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>XP</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="gold">1</td>
+            <td>😎</td>
+            <td>Alex Smith</td>
+            <td>16,800 XP</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>🧑‍💻</td>
+            <td>Jessica Lee</td>
+            <td>15,700 XP</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>🎮</td>
+            <td>Mia Chen</td>
+            <td>14,300 XP</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>🦾</td>
+            <td>Daniel Johnson</td>
+            <td>14,000 XP</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>⚡</td>
+            <td>Emma Davis</td>
+            <td>12,500 XP</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>😁</td>
+            <td>David Wilson</td>
+            <td>12,000 XP</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
   </section>
 </main>
 

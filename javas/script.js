@@ -38,3 +38,34 @@ function drawStars() {
   requestAnimationFrame(drawStars);
 }
 drawStars();
+
+// ── LEADERBOARD SEARCH FORM VALIDATION ──
+// Validates input is not empty, then searches the leaderboard data
+function searchLearner() {
+  // Get the value the user typed
+  var input = document.getElementById('searchInput').value.trim();
+  var resultBox = document.getElementById('searchResult');
+
+  // Validation: reject empty input
+  if (input === '') {
+    resultBox.style.color = '#f5c842';
+    resultBox.textContent = '⚠️ Please enter a username to search.';
+    return; // stop the function here
+  }
+
+  // Simulated leaderboard data to search through
+  var learners = ['Alex Smith', 'Jessica Lee', 'Mia Chen', 'Daniel Johnson', 'Emma Davis', 'David Wilson'];
+
+  // Case-insensitive search
+  var found = learners.find(function(name) {
+    return name.toLowerCase().includes(input.toLowerCase());
+  });
+
+  if (found) {
+    resultBox.style.color = '#00d4d8';
+    resultBox.textContent = '✅ Found: ' + found + ' is on the leaderboard!';
+  } else {
+    resultBox.style.color = '#a0b8d4';
+    resultBox.textContent = '❌ "' + input + '" was not found on this week\'s leaderboard.';
+  }
+}

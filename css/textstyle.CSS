@@ -83,6 +83,8 @@
       margin-top: -50px;
     }
 
+    img { max-width:90%; height:auto; }
+
     .hero-tag {
       display:inline-flex; align-items:center; gap:8px;
       font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
@@ -172,7 +174,6 @@
     .about-content {
       flex:1; /* fills bottom half */
       padding:20px;
-
       display:flex;
       flex-direction:column;
       justify-content:center;
@@ -274,9 +275,10 @@
     .xp-desc { font-size:12px; color:var(--muted); }
 
     /* scoreboard preview */
+    
     .gamify-visual {
       background:var(--card); border:1px solid var(--border);
-      border-radius:20px; padding:32px; overflow:hidden; position:relative;
+      border-radius:20px; padding:32px; overflow:hidden; position:relative; margin-top: 180px;
     }
     .gamify-visual::before {
       content:''; position:absolute; top:-40px; right:-40px;
@@ -287,28 +289,107 @@
       font-family:'Orbitron',monospace; font-size:14px; font-weight:700;
       color:var(--gold); margin-bottom:22px; display:flex; align-items:center; gap:10px;
     }
-    .lb-row {
-      display:flex; align-items:center; gap:14px;
-      padding:12px 0; border-bottom:1px solid rgba(255,255,255,.05);
-      font-size:14px;
+    .leaderboard-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
     }
-    .lb-row:last-child { border-bottom:none; }
-    .lb-rank { font-family:'Orbitron',monospace; font-size:16px; font-weight:700;
-      color:var(--muted); width:24px; text-align:center; }
-    .lb-rank.gold { color:var(--gold); }
-    .lb-avatar { width:34px; height:34px; border-radius:50%;
-      background:linear-gradient(135deg,var(--teal-dim),var(--teal));
-      display:flex;align-items:center;justify-content:center; font-size:16px; flex-shrink:0; }
-    .lb-name { flex:1; font-weight:600; color:var(--text); }
-    .lb-xp { font-family:'Orbitron',monospace; font-size:12px; color:var(--teal); }
+
+    .leaderboard-table th {
+      text-align: left;
+      padding: 12px;
+      font-family: 'Orbitron', monospace;
+      color: var(--gold);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .leaderboard-table td {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Hover effect */
+    .leaderboard-table tbody tr:hover {
+      background: rgba(0, 212, 216, 0.08);
+    }
+
+    /* Rank styling */
+    .leaderboard-table td:first-child {
+      font-weight: 700;
+      text-align: center;
+      width: 50px;
+    }
+
+    .leaderboard-table .gold {
+      color: var(--gold);
+    }
+
+    /* Avatar column */
+    .leaderboard-table td:nth-child(2) {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    /* XP styling */
+    .leaderboard-table td:last-child {
+      font-family: 'Orbitron', monospace;
+      color: var(--teal);
+    }
+    /* ── LEADERBOARD SEARCH FORM ── */
+    .lb-search {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0,212,216,0.15);
+    }
+    .lb-search-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .lb-form-group {
+      display: flex;
+      gap: 10px;
+    }
+    .lb-form-group input {
+      flex: 1;
+      background: rgba(0,212,216,0.06);
+      border: 1px solid rgba(0,212,216,0.25);
+      border-radius: 6px;
+      padding: 10px 14px;
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .lb-form-group input:focus {
+      border-color: var(--teal);
+    }
+    .lb-form-group button {
+      padding: 10px 20px;
+      background: var(--teal);
+      color: var(--bg);
+      border: none;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 12px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: background 0.2s;
+    }
+    .lb-form-group button:hover { background: #00eeff; }
+    .lb-search-result {
+      margin-top: 10px;
+      font-size: 13px;
+      min-height: 20px;
+    }
 
     /* ── WHY CPA ── */
     .why-section {
       padding:80px 56px;
-      max-width:1300px; margin:0 auto; text-align:center;
+      max-width:1300px; margin:0 auto; ;
     }
-    .why-section .section-sub { margin:0 auto 56px; text-align:center; }
-
     .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
     .why-card {
       background: var(--card);

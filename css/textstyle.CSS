@@ -285,10 +285,7 @@
       width:160px; height:160px; border-radius:50%;
       background:radial-gradient(circle,rgba(0,212,216,.12),transparent 70%);
     }
-    .lb-title {
-      font-family:'Orbitron',monospace; font-size:14px; font-weight:700;
-      color:var(--gold); margin-bottom:22px; display:flex; align-items:center; gap:10px;
-    }
+
     .leaderboard-table {
       width: 100%;
       border-collapse: collapse;

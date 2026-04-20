@@ -1,4 +1,13 @@
+/* ════════════════════════════════════════
+   script.js — Cyber Peacock Academy
+   Features:
+   1. Animated starfield background (HTML5 Canvas)
+   2. Leaderboard search with form validation
+   ════════════════════════════════════════ */
+
 // ── STARFIELD CANVAS ──
+// Creates 160 randomly positioned stars that twinkle using alpha animation
+// Uses requestAnimationFrame for smooth 60fps rendering (better than setInterval)
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 let stars = [];

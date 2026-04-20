@@ -1,4 +1,13 @@
 
+    /* ========================================
+        CYBER PEACOCK ACADEMY - Main Stylesheet
+        Author: Iyalini Rasakumar
+        Module: CN4003
+        Description: External CSS for all pages
+      =========================================
+    */
+
+    /* centralised colour variables for consistent theming across all pages */
     :root {
       --bg:        #03081a;
       --bg2:       #060f28;
@@ -29,9 +38,11 @@
       pointer-events: none;
     }
 
-    /* ── NAV ── */
+    /* ── NAVIGATION ── */
+    /* fixed top bar using flexbox. z-index:200 keeps it above all content*/
     nav {
-      position: fixed; top:0; left:0; right:0; z-index:200;
+      position: fixed; 
+      top:0; left:0; right:0; z-index:200;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 56px;
       height: 68px;
@@ -45,6 +56,8 @@
       color:var(--text); letter-spacing:1.5px;
     }
     .nav-links { display:flex; gap:40px; list-style:none; }
+
+    /* Hover underline effect using CSS transform scaleX animation*/
     .nav-links a {
       font-size:13px; font-weight:600; letter-spacing:.5px;
       color:var(--muted); text-decoration:none;
@@ -61,7 +74,8 @@
     /* ── WRAPPER ── */
     main { position:relative; z-index:1; }
 
-    /* ── HERO ── */
+    /* ── HERO SECTION ── */
+    /*FULL-VIEWPORT HEIGHT SECTION USING MIN-HEIGHT */
     .hero {
       min-height: 100vh;
       display: flex; align-items: center;
@@ -105,6 +119,9 @@
       margin-bottom:24px;
       animation: glowpulse 4s ease infinite;
     }
+    
+    /*Glowpulse: CSS keyframe animation on the heading*/
+    /*Creates a pulshing gold text-shadow effect for visula engagement*/
     @keyframes glowpulse {
       0%,100%{ text-shadow:0 0 30px rgba(245,200,66,.35); }
       50%{ text-shadow:0 0 70px rgba(245,200,66,.65), 0 0 140px rgba(245,200,66,.2); }
